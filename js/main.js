@@ -1,47 +1,27 @@
 'use strict';
 
-	console.log('5' * 3);
-	console.log('5' - 3);
-	console.log(parseInt('5',10) + 3);
-	console.log(parseInt('hello',10));
+	// let hp = 100;
 
-	// false として評価される値は 0 、 null 、 undefined 、空文字列、そして真偽値の false 自体になります。
-	console.log(Boolean(0));
-	console.log(Boolean("hello"));
+	// while (hp > 0) {
+	// 	console.log(`${hp} HP left!`);
+	// 	hp -= 15;
+	// }
 
-	const score = 70;
+	let hp = -50;
 
-	// score >= 80 ? console.log('Great!'):console.log("OK...");
+	do {
+		console.log(`${hp} HP left!`);
+		hp -= 15;
 
-	const name = "taguchi";
+	}while (hp > 0) 
 
-	if(score >= 50){
-		if(name === "taguchi"){
-			console.log("Good job!");
+
+	for (let i =1;i <= 10; i ++){
+		if (i === 4) {
+			break;
 		}
-	}
-
-	// 論理演算子を使ったif文
-	if(score >=50 && name === "taguchi"){
-		console.log("Good job!");
+			console.log(i);
+			
 	}
 
 
-	// swich文
-	const signal = "pink";
-
-	switch(signal){
-		case "red":
-			console.log("stop!");
-			break;
-		case "yellow":
-			console.log("Caution!");
-			break;
-		case "bule":
-		case "green":
-			console.log("Go!");
-			break;
-		default:
-			console.log("Worng signal!");
-			break;
-	}
