@@ -1,27 +1,27 @@
 'use strict';
 
-	console.log('it\'s,me!');
-	console.log("it's,me!");
-	console.log("hel\nlo wo\trld");
-	console.log("hello" + "world");
+	console.log('5' * 3);
+	console.log('5' - 3);
+	console.log(parseInt('5',10) + 3);
+	console.log(parseInt('hello',10));
 
+	// false として評価される値は 0 、 null 、 undefined 、空文字列、そして真偽値の false 自体になります。
+	console.log(Boolean(0));
+	console.log(Boolean("hello"));
 
-	console.log(10 ** 3);
+	const score = 70;
 
-	let price = 500;
+	// score >= 80 ? console.log('Great!'):console.log("OK...");
 
-	console.log(price);
+	const name = "taguchi";
 
-	price += 100;
+	if(score >= 50){
+		if(name === "taguchi"){
+			console.log("Good job!");
+		}
+	}
 
-	price *=2;
-
-	price ++;
-	price --;
-	console.log(price);
-
-	console.log(typeof 'hello');
-	console.log(typeof 5);
-	console.log(typeof true);
-	console.log(typeof undefined);
-	console.log(typeof null);
+	// 論理演算子を使ったif文
+	if(score >=50 && name === "taguchi"){
+		console.log("Good job!");
+	}
