@@ -25,3 +25,23 @@
 	if(score >=50 && name === "taguchi"){
 		console.log("Good job!");
 	}
+
+
+	// swich文
+	const signal = "pink";
+
+	switch(signal){
+		case "red":
+			console.log("stop!");
+			break;
+		case "yellow":
+			console.log("Caution!");
+			break;
+		case "bule":
+		case "green":
+			console.log("Go!");
+			break;
+		default:
+			console.log("Worng signal!");
+			break;
+	}
