@@ -1,9 +1,10 @@
 'use strict';
 
-
-
-
 {
-	const x = 100;
-	console.log(x);
+	function update() {
+		// document.querySelector("h1").textContent = "Changed!";
+		document.getElementById("target").textContent = "Changed!";
+
+	}
+	setTimeout(update, 1000);
 }
