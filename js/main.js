@@ -4,10 +4,13 @@
 
 
 	const scores = [80,90,40,70];
-	scores.push(60,50);
-	scores.shift();//削除は1つずつしかできない
-	// 90,40,70,60,50
-	console.log(scores);
+	scores.splice(1,1,40,50);
+	
+	for(let i =0; i < scores.length;i++){
+		console.log(`Score ${i}: ${scores[i]}`);
+	}
+
+	scores.splice(1,2);
 	
 	for(let i =0; i < scores.length;i++){
 		console.log(`Score ${i}: ${scores[i]}`);
