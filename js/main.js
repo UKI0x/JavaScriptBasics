@@ -2,17 +2,18 @@
 
 {
 
-
-	const scores = [80,90,40,70];
-	scores.splice(1,1,40,50);
+	// スプレッド構文
+	const otherScores = [10,20];
+	// 定数scoresにotherScoresの中身を追加したい場合
+	// const scores = [80,90,40,70, otherScores];これでは定数の中に更に定数が入ってしまう
+	const scores = [80,90,40,70, ...otherScores];
+	console.log(scores);
 	
-	for(let i =0; i < scores.length;i++){
-		console.log(`Score ${i}: ${scores[i]}`);
+	// スプレッド構文は関数の引数にも使われる
+	function sum(a,b){
+		console.log(a + b);
 	}
-
-	scores.splice(1,2);
-	
-	for(let i =0; i < scores.length;i++){
-		console.log(`Score ${i}: ${scores[i]}`);
-	}
+	sum(...otherScores);
+	// sum(10,20);
 }
+
