@@ -2,23 +2,33 @@
 
 
 {
-	// Filter()
-	// 配列の要素をチェックして、条件に合うものだけを抽出して、別の配列として取得することができる
+	// お絵描きアプリ等でX座標とY座標を管理したい場合
+	// const point = [100, 180];
 
-	const numbers = [1, 4, 7, 8, 10];
+	// それぞれの値に名前が付いていた方が分かりやすいのでオブジェクト記法でまとめる
+	const point = {
+		x:100,
+		y:180,
+	};
+	// オブジェクトの最後の,は付けてもつけなくてもエラーにはなりません
+	// ただ、ここに , があると全ての行が同じ形式になって追加や削除、入れ替えがしやすくなるので今回は付けておきましょう。
 
-	// 偶数の要素だけ別の配列として抽出する
-	// const evenNumbers = numbers.filter((number)=>{
-	// 	if(number % 2 === 0){
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// });
+	console.log(point);
 
-	上記の書き方はこのように短く記述することもできる
-	const evenNumbers = numbers.filter(number => number % 2 === 0);
+	// オブジェクトのプロパティにアクセスする方法2種類
 
-	console.log(evenNumbers);//[4,8,10]
+	point.x = 120;
+	// point["x"] = 120;
+
+	// プロパティを追加したい場合
+	point.z = 90;
+
+	// プロパティを削除したい場合
+	delete point.y;
+
+	console.log(point.x);
+	console.log(point["y"]);
+	console.log(point);
+
+
 }
-
