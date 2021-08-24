@@ -2,18 +2,17 @@
 
 {
 
-	// スプレッド構文
-	const otherScores = [10,20];
-	// 定数scoresにotherScoresの中身を追加したい場合
-	// const scores = [80,90,40,70, otherScores];これでは定数の中に更に定数が入ってしまう
-	const scores = [80,90,40,70, ...otherScores];
-	console.log(scores);
+	// 分割代入
+	// 配列の中身を別々の定数にしたい場合
+	const scores = [80,90,40,70];
 	
-	// スプレッド構文は関数の引数にも使われる
-	function sum(a,b){
-		console.log(a + b);
-	}
-	sum(...otherScores);
-	// sum(10,20);
+	const [a,b,c,d] = scores;
+	console.log(a);
+	console.log(b);
+	console.log(c);
+	console.log(d);
+
+	//レスト構文
+	const [a,b, ...others] = scores;
 }
 
