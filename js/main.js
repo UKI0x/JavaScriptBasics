@@ -1,14 +1,24 @@
 'use strict';
 
+
 {
-	// map 配列に何らかの処理をして、その結果を別の配列として取得したい場合
-	const prices = [180,190,200];
+	// Filter()
+	// 配列の要素をチェックして、条件に合うものだけを抽出して、別の配列として取得することができる
 
-	// それぞれ20円値上げした結果を配列で出力したい
-	// const updatedPrices = prices.map((price)=>{
-	// 	return price + 20;
+	const numbers = [1, 4, 7, 8, 10];
 
-	const updatedPrices = prices.map(price=> price + 20);
-	console.log(updatedPrices);
+	// 偶数の要素だけ別の配列として抽出する
+	// const evenNumbers = numbers.filter((number)=>{
+	// 	if(number % 2 === 0){
+	// 		return true;
+	// 	} else {
+	// 		return false;
+	// 	}
+	// });
+
+	上記の書き方はこのように短く記述することもできる
+	const evenNumbers = numbers.filter(number => number % 2 === 0);
+
+	console.log(evenNumbers);//[4,8,10]
 }
 
