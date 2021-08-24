@@ -2,33 +2,27 @@
 
 
 {
-	// お絵描きアプリ等でX座標とY座標を管理したい場合
-	// const point = [100, 180];
+	// スプレッド構文でオブジェクトの展開を行う
+	const otherProps = {
+		r: 4,
+		color:"red",
+	};
 
-	// それぞれの値に名前が付いていた方が分かりやすいのでオブジェクト記法でまとめる
+	// スプレッド構文で他のオブジェクトのプロパティを追加する
 	const point = {
 		x:100,
 		y:180,
+		...otherProps,
 	};
-	// オブジェクトの最後の,は付けてもつけなくてもエラーにはなりません
-	// ただ、ここに , があると全ての行が同じ形式になって追加や削除、入れ替えがしやすくなるので今回は付けておきましょう。
-
-	console.log(point);
-
-	// オブジェクトのプロパティにアクセスする方法2種類
-
-	point.x = 120;
-	// point["x"] = 120;
-
-	// プロパティを追加したい場合
-	point.z = 90;
-
-	// プロパティを削除したい場合
-	delete point.y;
-
-	console.log(point.x);
-	console.log(point["y"]);
-	console.log(point);
 
 
+	// console.log(point);
+
+
+	// 分割代入とレスト構文もオブジェクトに対して使用することができる
+	// const {} として point を代入するのですが、こちらにオブジェクトのキーと同じ定数名を使ってあげれば、そのキーの値が代入されるという仕組みになっています。
+	const {x,r, ...others} = point;
+	console.log(x);
+	console.log(r);
+	console.log(others);
 }
