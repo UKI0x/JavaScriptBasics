@@ -2,27 +2,28 @@
 
 
 {
-	// スプレッド構文でオブジェクトの展開を行う
-	const otherProps = {
-		r: 4,
-		color:"red",
-	};
+	// オブジェクトのプロパティを列挙したいときに、forEachがオブジェクトには使えないので、いくつかの手順を踏む必要がある
 
-	// スプレッド構文で他のオブジェクトのプロパティを追加する
 	const point = {
-		x:100,
-		y:180,
-		...otherProps,
+		x: 100,
+		y: 180,
 	};
 
 
-	// console.log(point);
+	// Object.keys(point)とすると、pointのすべてのキーを配列で取得できるので、それをkeysという定数にまずは入れる
+	// そうすると、キーが配列で取得できて、配列にはforEach()が使えるので、それを使っていく
+	const keys = Object.keys(point);
 
+	console.log(point);
+	console.log(keys);
+	keys.forEach(key => {
+		console.log(`key : ${key} Value: ${point[key]}`);
+	});
 
-	// 分割代入とレスト構文もオブジェクトに対して使用することができる
-	// const {} として point を代入するのですが、こちらにオブジェクトのキーと同じ定数名を使ってあげれば、そのキーの値が代入されるという仕組みになっています。
-	const {x,r, ...others} = point;
-	console.log(x);
-	console.log(r);
-	console.log(others);
+	const points = [
+		{x:30, y: 20},
+		{x:10, y: 50},
+		{x:40, y: 40},
+	];
+	console.log(points[1].y);
 }
