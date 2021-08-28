@@ -2,20 +2,34 @@
 
 
 {
-	//配列の要素を文字列として結合するための命令
-	const d = [2019, 11, 14];
-	// 引数には結合する文字列を記入する 何も入れたくない場合は空文字でもOK
-	console.log(d.join("/")); //2019/11/14
-	console.log(d.join(""));
+	// 数値の合計と平均を求める
+	const scores = [10,3,9];
 
-	// joinとは逆に、文字列を区切り文字の所で分割して、配列にしたい場合　split()
+	let sum = 0;
 
-	const t = "17:08:24";
-	console.log(t.split(":"));
+	scores.forEach(score => {
+		sum += score;
+	});
 
-	// 分割代入
-	const [hour, minute, second ] = t.split(":");
-	console.log(hour);
-	console.log(minute);
-	console.log(second);
+	const avg = sum / scores.length;
+	console.log(sum);
+	console.log(avg);
+
+	// 小数点以下切り捨て
+	console.log(Math.floor(avg));
+
+	// 小数点以下切り上げ
+	console.log(Math.ceil(avg));
+
+
+	// 四捨五入
+	console.log(Math.round(avg));
+
+	// 指定した桁数になるように数値を丸めたい場合
+	console.log(avg.toFixed(3));
+
+	// 乱数を生成する 0以上1未満
+	console.log(Math.random());
+
+
 }
