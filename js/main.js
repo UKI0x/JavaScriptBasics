@@ -2,24 +2,13 @@
 
 
 {
-	// let x = 1;
-	// let y = x;
-	// x = 5;
-	// console.log(x);  //5
-	// console.log(y); //1
-	// let x = [1,2];
-	// let y = x;
-	// x[0] = 5;
-	// console.log(x);  //[5,2]
-	// console.log(y); //[1,2]ではなく[5,2]になる
+	const str = "hello";
 
-	// 複雑なデータ型はデータ量が大きくなることも多いので、
-	// 丸ごと値をコピーしてシステムに付加を書けてしまわない為このような挙動になる
+	console.log(str.length);
 
-	let x = [1,2];
-	let y = [...x];//xの値を持ってきたい場合はスプレッド演算子を使用する
-	x[0] = 5;
-	console.log(x);  //[5,2]
-	console.log(y); //[1,2]
+	// str.substring(開始位置,終了位置);
+	console.log(str.substring(2,4));
 
+	console.log(str[1]);
+	// str[1] = "a"; ただし、値が設定できるだけで、配列と同じ操作はできない
 }
