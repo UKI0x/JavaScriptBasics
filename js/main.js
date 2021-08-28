@@ -2,13 +2,20 @@
 
 
 {
-	const str = "hello";
+	//配列の要素を文字列として結合するための命令
+	const d = [2019, 11, 14];
+	// 引数には結合する文字列を記入する 何も入れたくない場合は空文字でもOK
+	console.log(d.join("/")); //2019/11/14
+	console.log(d.join(""));
 
-	console.log(str.length);
+	// joinとは逆に、文字列を区切り文字の所で分割して、配列にしたい場合　split()
 
-	// str.substring(開始位置,終了位置);
-	console.log(str.substring(2,4));
+	const t = "17:08:24";
+	console.log(t.split(":"));
 
-	console.log(str[1]);
-	// str[1] = "a"; ただし、値が設定できるだけで、配列と同じ操作はできない
+	// 分割代入
+	const [hour, minute, second ] = t.split(":");
+	console.log(hour);
+	console.log(minute);
+	console.log(second);
 }
