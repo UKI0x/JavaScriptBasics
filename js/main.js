@@ -2,16 +2,24 @@
 
 
 {
-	// 例外処理
-	// 例：ユーザーから名前を受け取って、それを大文字にする処理
+	// オブジェクトが複数ある場合を考える
+	// 匿名で文章を投稿できるSNSを作成したとする
+	// 投稿が複数あるので、まずは配列を作って、その中に文章と言い値を管理するようなオブジェクトを複数入れる
+	const posts = [
+		{
+			text: "JavaScriptの勉強中…",
+			likeCount: 0,
+		},
+		{
+			text: "プログラミング楽しい！",
+			likeCount: 0,
+		}
+	];
 
-	const name = 123;
-	//大文字に変換するには　toUpperCase()という命令を使用する ※ただし、文字列にしか使用できない
-	// 例えば定数nameに数値が入ってエラーになったとしても処理を止めたくない場合、例外処理を使用する
-	try{
-		console.log(name.toUpperCase());
-	} catch(e) {
-		console.log(e);
+	// 関数を使用して、postを受け通ったら、そのpostのtextとlikeCountプロパティを表示する
+
+	function show(post){
+		console.log(`${post.text} - ${post.likeCount}いいね`);
 	}
-	console.log("Finish!");
+	show(posts[0]);
 }
