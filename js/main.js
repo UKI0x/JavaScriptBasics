@@ -1,8 +1,8 @@
 'use strict';
 
-//クラスを拡張したい場合を考える
+//クラスを継承する
 {
-	class Post {
+	class Post {//親クラス
 		constructor(text) {
 			this.text = text;
 			this.likeCount = 0;		
@@ -18,22 +18,17 @@
 			}
 
 	}
-	// Postクラスを元に別のクラスを作成したい場合
-	class SponsoredPost {
+	// Postクラスと同じメソッドを引き継ぐ場合　extends クラス名と指定すると、指定されたクラスを継承できる
+	class SponsoredPost extends Post{ //子クラス
 		constructor(text, sponsor) {
-			this.text = text;
-			this.likeCount = 0;	
+			// 子クラスのconstructorでthisを使うには、最初にsupre()と指定する
+			super(text);
 			this.sponsor = sponsor;
 			}
 
 			show(){
-				console.log(`${this.text} - ${this.likeCount}like`);
+				super.show();
 				console.log(`... sponsord by ${this.sponsor}`);
-			}
-
-			like() {
-				this.likeCount++;
-				this.show();
 			}
 
 	}
