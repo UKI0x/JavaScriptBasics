@@ -2,17 +2,16 @@
 
 
 {
-	let i =0;
-	function showTime() {
-		console.log(new Date());
-		const timeoutId = setTimeout(showTime, 1000);
-		i ++;
-		if (i >2) {
-			clearTimeout(timeoutId);
-		}
+	// 例外処理
+	// 例：ユーザーから名前を受け取って、それを大文字にする処理
+
+	const name = 123;
+	//大文字に変換するには　toUpperCase()という命令を使用する ※ただし、文字列にしか使用できない
+	// 例えば定数nameに数値が入ってエラーになったとしても処理を止めたくない場合、例外処理を使用する
+	try{
+		console.log(name.toUpperCase());
+	} catch(e) {
+		console.log(e);
 	}
-
-	// 指定した時間のあとに１回だけ処理を実行するように予約する命令
-
-	showTime();
+	console.log("Finish!");
 }
