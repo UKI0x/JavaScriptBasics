@@ -1,8 +1,7 @@
 'use strict';
 
-
+//カプセル化を理解する
 {
-	//クラスを作成してみる
 	class Post {
 		constructor(text) {
 			this.text = text;
@@ -10,7 +9,12 @@
 			}
 
 			show(){
-				console.log(`${this.text} - ${this.likeCount}いいね`);
+				console.log(`${this.text} - ${this.likeCount}like`);
+			}
+
+			like() {
+				this.likeCount++;
+				this.show();
 			}
 	}
 
@@ -20,8 +24,9 @@
 		new Post("プログラミング楽しい！"),
 	];
 
-	// メソッド（オブジェクトの値が関数の時の呼び名）の時の呼び出し方
-	posts[0].show();
-	// ただし、この記法だと、オブジェクト内に同じ処理の関数を必ず含めないといけない
-	posts[1].show();
+	// プロパティは直接操作せずにメソッドを介して操作するようにしてあげる=>カプセル化とも呼ぶ
+	posts[0].like();
+	// posts[0].show();
+	// posts[1].show();
+
 }
